@@ -1,0 +1,31 @@
+<body>
+    <div class="center">
+     <form class="add-band">
+         <mat-form-field class="example-full-width" appearance="fill">
+             <mat-label>Warband name</mat-label>
+             <input matInput required [(ngModel)]="BandName" [ngModelOptions]="{standalone: true}">
+         </mat-form-field>
+ 
+         <button mat-button (click) ="AddWarband()">Add Warband</button>
+     </form>
+     </div>
+ 
+     <div *ngFor='let warband of MyMapLikeType | keyvalue;' >
+         {{warband.key}} :
+         <mat-form-field class="example-full-width" appearance="fill">
+             <mat-label>Member Name</mat-label>
+             <input matInput required [(ngModel)]="MemberName" [ngModelOptions]="{standalone: true}">
+         </mat-form-field>
+ 
+         <button mat-button (click) ="AddMember(warband.key)">Add Member</button>
+         <!-- {{warband.value}} -->
+         <li *ngFor="let recipient4 of warband.value">
+             {{recipient4.name}} Spare: {{recipient4.Spare}} <button mat-button (click) ="recipient4.Set_AF(-1)">-</button> AF: {{recipient4.AF}} <button mat-button (click) ="recipient4.Set_AF(1)">+</button>
+             <button mat-button (click) ="recipient4.Set_AM(-1)">-</button> AM: {{recipient4.AM}} <button mat-button (click) ="recipient4.Set_AM(1)">+</button>
+         </li>
+ 
+         <!-- <div *ngFor='let member of myWarNameS[i];let j = index' >
+             {{member}} :
+         </div> -->
+     </div>
+ </body>
