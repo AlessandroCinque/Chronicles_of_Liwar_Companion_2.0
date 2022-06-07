@@ -11,9 +11,7 @@ describe('WarbandPanelComponent', () => {
       declarations: [ WarbandPanelComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(WarbandPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
